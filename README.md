@@ -1,5 +1,7 @@
 Visualise which files were touched by which commits so you can untangle long branches and spot logical change groups.
 
+Demo: [https://straz.to/git-touch-matrix/](https://straz.to/git-touch-matrix/)
+
 # About
 
 Git File Matrix is a visual tool for understanding how a branch evolved.
