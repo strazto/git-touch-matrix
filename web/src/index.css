@@ -1,0 +1,303 @@
+:root {
+  --hit-fill: #8fd19e;
+  --range-gray: #e8e8e8;
+  --fresh-rgb: 60, 95, 140;
+  --folder-line-neutral: #d6d6d6;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 16px;
+  background: #fafafa;
+  color: #333;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+p {
+  margin-top: 0;
+  color: #666;
+}
+
+.controls {
+  margin-bottom: 16px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-size: 14px;
+  flex-wrap: wrap;
+}
+
+.toggle {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  font-size: 12px;
+  color: #555;
+}
+
+select,
+button,
+input {
+  padding: 4px 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #fff;
+}
+
+button {
+  cursor: pointer;
+}
+
+select:hover,
+button:hover {
+  border-color: #999;
+}
+
+table {
+  border-collapse: collapse;
+  font-size: 12px;
+  background: #fff;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 10%);
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 4px 6px;
+}
+
+th {
+  position: sticky;
+  top: 0;
+  background: #f0f0f0;
+  z-index: 10;
+  box-shadow: 0 1px 0 #ddd;
+}
+
+td.file {
+  position: sticky;
+  left: 0;
+  background: #fff;
+  max-width: 520px;
+  white-space: nowrap;
+  z-index: 5;
+  box-shadow: 1px 0 0 #ddd;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+th.file-header {
+  position: sticky;
+  left: 0;
+  z-index: 15;
+  background: #f0f0f0;
+  box-shadow: 1px 1px 0 #ddd;
+}
+
+td.hit {
+  background: var(--hit-fill);
+}
+
+td.miss {
+  background: #fff;
+}
+
+td.folder {
+  background: #f9f9f9;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+}
+
+td.folder:hover {
+  background: #eee;
+}
+
+td.folder-expanded-cell {
+  box-shadow: inset 0 -2px 0 var(--folder-line-color, var(--folder-line-neutral));
+}
+
+td.outside-range {
+  background-color: var(--range-gray);
+}
+
+td.fresh-gap {
+  background-color: rgb(var(--fresh-rgb) / var(--fresh-alpha, 0.12));
+}
+
+td.pre-hit-anchor {
+  position: relative;
+  overflow: visible;
+}
+
+.pre-hit-label {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 9px;
+  line-height: 1;
+  color: #596275;
+  opacity: 0.8;
+  white-space: nowrap;
+  pointer-events: none;
+  font-style: italic;
+}
+
+.rotate {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  white-space: nowrap;
+  max-height: 220px;
+  padding: 8px 4px;
+}
+
+.file-name {
+  margin-left: 4px;
+  display: inline-block;
+}
+
+.folder-icon {
+  font-size: 10px;
+  width: 14px;
+  display: inline-block;
+  text-align: center;
+  color: #666;
+}
+
+.legend {
+  margin-bottom: 12px;
+  display: flex;
+  gap: 8px 14px;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: #444;
+}
+
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.legend-swatch {
+  width: 16px;
+  height: 12px;
+  border: 1px solid #cfcfcf;
+  background: #fff;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.legend-hit {
+  background: var(--hit-fill);
+}
+
+.legend-folder-thin {
+  background-image: linear-gradient(
+    to bottom,
+    transparent calc(50% - 1px),
+    var(--hit-fill) calc(50% - 1px),
+    var(--hit-fill) calc(50% + 1px),
+    transparent calc(50% + 1px)
+  );
+}
+
+.legend-outside {
+  background: var(--range-gray);
+}
+
+.legend-fresh {
+  background: rgb(var(--fresh-rgb) / 22%);
+}
+
+.error {
+  color: #a40000;
+  margin-top: 12px;
+}
+
+.data-input-panel {
+  margin-bottom: 16px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 5%);
+}
+
+.data-input-panel h2 {
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+
+.data-input-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.data-input-header h2 {
+  margin: 0;
+}
+
+.data-source-status {
+  margin: 8px 0;
+  color: #4f5f77;
+  font-size: 12px;
+}
+
+.manual-input-controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.manual-input-controls label {
+  font-size: 12px;
+  color: #555;
+}
+
+.manual-input-controls input {
+  min-width: 260px;
+}
+
+.command-hint {
+  margin: 8px 0;
+  font-size: 12px;
+}
+
+.manual-data-input {
+  width: 100%;
+  min-height: 140px;
+  resize: vertical;
+  box-sizing: border-box;
+  font-family: ui-monospace, sfmono-regular, menlo, monospace;
+  font-size: 12px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.manual-actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+}
+
+.mode-pill {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  color: #1f4a2e;
+  background: #e5f4e9;
+}
