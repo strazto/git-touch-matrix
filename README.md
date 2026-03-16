@@ -1,6 +1,27 @@
-# Git File Matrix
+Visualise which files were touched by which commits so you can untangle long branches and spot logical change groups.
 
-`git_file_matrix.py` generates file/commit matrix data from `git log` and can serve an interactive UI.
+# About
+
+Git File Matrix is a visual tool for understanding how a branch evolved.
+
+Large branches often start cleanly, then grow across dozens of commits and files. Even with decent commit hygiene, it becomes hard to see where one piece of work ends and another begins, especially when later commits revisit earlier architectural changes.
+
+Git File Matrix makes that easier by turning Git history into an interactive file-by-commit matrix.
+
+- **Columns** represent commits
+- **Rows** represent files
+- **Cells** show when a file was touched by a commit
+
+This makes it much easier to spot related change clusters, follow the spread of a refactor or feature through the codebase, and identify clean boundaries for branch splitting, rebasing, or cherry-picking.
+
+You can use it in two modes:
+
+- **Paste raw `git log` output** into the browser for a fully static workflow
+- **Run the local Python server** to generate and refresh matrix data automatically from a repository
+
+Git File Matrix is useful for refactoring, stacked branches, code archaeology, branch cleanup, and any situation where you need to answer: "what actually changed together?"
+
+# Running it yourself
 
 ## Build the web UI
 
