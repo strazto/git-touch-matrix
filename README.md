@@ -1,3 +1,5 @@
+# Git File Matrix
+
 Visualise which files were touched by which commits so you can untangle long branches and spot logical change groups.
 
 Demo: [https://straz.to/git-touch-matrix/](https://straz.to/git-touch-matrix/)
