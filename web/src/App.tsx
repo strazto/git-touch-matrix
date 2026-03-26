@@ -354,6 +354,7 @@ function Matrix({ data }: { data: MatrixData }) {
                         key={commit.sha}
                         className={classes.join(" ")}
                         style={styles as JSX.CSSProperties}
+                        title={hit ? `${commit.subject} — ${commit.sha}` : undefined}
                       >
                         {untouchedCount !== null ? (
                           <span className="pre-hit-label">
@@ -406,6 +407,7 @@ function Matrix({ data }: { data: MatrixData }) {
                       key={commit.sha}
                       className={classes.join(" ")}
                       style={styles as JSX.CSSProperties}
+                      title={hit ? `${commit.subject} — ${commit.sha}` : undefined}
                     >
                       {untouchedCount !== null ? (
                         <span className="pre-hit-label">
